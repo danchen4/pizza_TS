@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 /**
  * For State
@@ -85,7 +85,7 @@ const reducer = (state: AppStateValue, action: CartActions) => {
  * dispatch (or setState) can be undefined if it is called OUTSIDE of <AppSetStateContext.Provider>
  */
 // export const useSetState = () => {
-export const useStateDispatch = () => {
+export const useDispatch = () => {
   // const setState = useContext(AppSetStateContext);
   const dispatch = useContext(AppDispatchContext);
   if (!dispatch) {

@@ -1,25 +1,14 @@
 import React from 'react';
-// import { /*useSetState, useStateDispatch */} from '../context/AppState';
 import PizzaCSS from './PizzaItem.module.css';
-// import { ActionTypes } from '../context/AppState';
 import { Pizza } from '../types';
-import { AddToCartProps, withAddToCart } from '../hoc/AddToCart';
+import { AddToCartProps, withAddToCart } from '../hoc/withAddToCart';
 
 interface PizzaProps extends AddToCartProps {
   pizza: Pizza;
 }
 
 const PizzaItem: React.FC<PizzaProps> = ({ pizza, addToCart }) => {
-  // Now using custom hook that will check if setState is undefined to remove some code
-  // const dispatch = useStateDispatch();
-
   const handleAddToCartClick = () => {
-    // dispatch({
-    //   type: ActionTypes.AddToCart,
-    //   payload: {
-    //     item: { id: pizza.id, name: pizza.name, price: pizza.price },
-    //   },
-    // });
     addToCart({ id: pizza.id, name: pizza.name, price: pizza.price });
   };
 

@@ -1,10 +1,7 @@
-import React from 'react';
-import { ActionTypes, useDispatch } from '../context/AppState';
+import { useDispatch, ActionTypes } from '../context/AppState';
 import { AddToCartProps } from '../hoc/withAddToCart';
 
-export const WithAddToCartProps: React.FC<{ children: (props: AddToCartProps) => JSX.Element }> = ({
-  children,
-}) => {
+export const useAddToCart = () => {
   const dispatch = useDispatch();
 
   const addToCart: AddToCartProps['addToCart'] = (item) => {
@@ -15,5 +12,6 @@ export const WithAddToCartProps: React.FC<{ children: (props: AddToCartProps) =>
       },
     });
   };
-  return children({ addToCart });
+
+  return addToCart;
 };

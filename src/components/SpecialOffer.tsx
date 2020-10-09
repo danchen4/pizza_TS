@@ -17,6 +17,7 @@ interface Props {
 export const SpecialOffer: React.FC<Props> = ({ pizza }) => {
   return (
     <div className={SpecialOfferCSS.container}>
+      <h3>with render prop</h3>
       <h2>{pizza.name}</h2>
       <p>{pizza.description}</p>
       <p>{pizza.price}</p>
